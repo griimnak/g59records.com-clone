@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    @keyframes blinker { 50% { opacity: 0; } }
+    html, body { background-color: #0200ac; color: #fff; font-family: Arial, Helvetica, sans-serif; overflow: hidden; }
+    h1 { font-size: 25px; padding: 7px 0; }
+    .error { text-align: center; margin: 0 auto; display: block; }
+    .container { position: absolute; width: 100%; left: 50%; top: 49%; transform: translate(-50%,-49%); }
+    .continue {max-width: 267px; margin: 0 auto; animation: blinker 1s linear infinite;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="error">
+      <h1>0x000000CE DRIVER_UNLOADED_WITHOUT_CANCELLING_PENDING_OPERATIONS</h1>
+      <h1>BSOD : Error 333 Registry Failure of operating system - Host</h1>
+      <h1>BLUE SCREEN ERROR 0x000000CE</h1>
+      <div class="continue">
+        <h1>Press anywhere to continue</h1>
+    </div>
+  </div>
+  </div>
+
+  <script type="text/javascript">
+    function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+    async function start_script() {
+      for(let i=0; i < 14; i++) {
+        var img  = document.createElement("img");
+        
+        img.style.position = "fixed";
+        img.src = "/window.png";
+        // generate random position
+        img.style.top = Math.floor(Math.random() * 900) + "px";
+        img.style.left = Math.floor(Math.random() * 1800) + "px";
+
+        document.body.appendChild(img);
+        await sleep(35);
+      }
+    }
+    setTimeout(start_script, 1000);
+  </script>
+</body>
+</html>
